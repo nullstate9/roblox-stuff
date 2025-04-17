@@ -3,7 +3,7 @@
 I wanted to add more functions to the `crypt` library for Roblox Executors, as there were no implementations for HMACSHA256 or JSON Web Tokens (JWT). 
 
 ```lua
-crypt.hmac_encode(key, message)
+crypt.hmac_encode(key, message) -- Requires crypt.hash()
 
 -- Example
 local hmac_bin = crypt.hmac_encode("MyKey123", "Hello There!")
@@ -18,7 +18,7 @@ Returns: 256-bit Binary Digest
 To convert to human-readable, you can just encode it to base64.
 
 ```lua
-crypt.jwt_encode(key, payload)
+crypt.jwt_encode(key, payload) -- Requires crypt.hmac_encode() and base64_encode()
 
 -- Example
 local body = {name = "nullstate9", "userId": "123456"}
@@ -32,7 +32,7 @@ Function Overview: Encodes a Table as a JSON Web Token (JWT) (Using the HS256 al
 Returns: JWT Token. Read about JWT Tokens [Here](https://jwt.io/introduction)
 
 ```lua
-crypt.jwt_decode(key, token)
+crypt.jwt_decode(key, token) -- Requires base64_encode() and base64_decode()
 
 -- Example
 local jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibnVsbHN0YXRlOSIsInVzZXJJZCI6IjEyMzQ1NiJ9.Nb0RNM7QkvKb9u6EJaQmjqgAG1K1FW-XOzAsoHCUdZI" -- See Above Output
