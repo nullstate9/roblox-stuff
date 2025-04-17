@@ -35,7 +35,7 @@ Returns: JWT Token. Read about JWT Tokens [Here](https://jwt.io/introduction)
 crypt.jwt_decode(key, token)
 
 -- Example
-local jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibnVsbHN0YXRlO..." -- See Above Output
+local jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibnVsbHN0YXRlOSIsInVzZXJJZCI6IjEyMzQ1NiJ9.Nb0RNM7QkvKb9u6EJaQmjqgAG1K1FW-XOzAsoHCUdZI" -- See Above Output
 local decoded_payload = crypt.jwt_decode("MyKey123", jwtToken)
 -- Output: <table 0xffff1249214> -- table object
 ```
