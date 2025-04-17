@@ -1,6 +1,12 @@
 # New Functions
 
-I wanted to add more functions to the `crypt` library for Roblox Executors, as there were no implementations for HMACSHA256 or JSON Web Tokens (JWT). 
+Proposed additions to the `crypt` library for Roblox Executors.
+
+Unfortunately these were not implemented into sUNC as there is no demand for more functions such as this, and also it is vulnerable to being hooked. 
+
+One way to circumvent this is by copying the functions as local functions. This, however, **may** be vulnerable to `getgc()` or `filtergc()`. 
+
+## Functions Docs
 
 ```lua
 crypt.hmac_encode(key, message) -- Requires crypt.hash()
