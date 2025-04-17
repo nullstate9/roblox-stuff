@@ -4,7 +4,8 @@ A simple Terminal-Based Game Launcher. Can be tweaked, i don't really care.
 
 (LINUX ONLY, READ BELOW FOR OTHER OPERATING SYSTEMS)
 
-On the last line of the `joinGame()` function, I used "xdg-open" to open the roblox-player: link. This can be substituted for "start" (Windows) and "open" (macOS)
+On the last line of the `joinGame()` function, I used "xdg-open" to open the roblox-player: link. 
+This can be substituted for `start` (Windows) and `open` (macOS) I believe.
 
 You could also probably make joining a server work, just add another argument for `joinGame()`, and replace the following code
 
