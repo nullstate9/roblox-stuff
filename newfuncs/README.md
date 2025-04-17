@@ -8,6 +8,7 @@ One way to circumvent this is by copying the functions as local functions. This,
 
 ## Functions Docs
 
+### crypt.hmac_encode()
 ```lua
 crypt.hmac_encode(key, message) -- Requires crypt.hash()
 
@@ -23,6 +24,7 @@ Returns: 256-bit Binary Digest
 
 To convert to human-readable, you can just encode it to base64.
 
+### crypt.jwt_encode()
 ```lua
 crypt.jwt_encode(key, payload) -- Requires crypt.hmac_encode() and base64_encode()
 
@@ -37,6 +39,7 @@ Function Overview: Encodes a Table as a JSON Web Token (JWT) (Using the HS256 al
 
 Returns: JWT Token. Read about JWT Tokens [Here](https://jwt.io/introduction)
 
+### crypt.jwt_decode()
 ```lua
 crypt.jwt_decode(key, token) -- Requires base64_encode() and base64_decode()
 
