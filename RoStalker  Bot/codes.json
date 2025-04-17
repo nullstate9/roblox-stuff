@@ -1,0 +1,10 @@
+{
+    "codes": [
+        {
+            "Name": "Example",
+            "Amount": 5,
+            "UsesLeft": 50,
+            "Used": []
+        }
+    ]
+}
