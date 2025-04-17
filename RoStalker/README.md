@@ -1,6 +1,7 @@
 # RoStalker
 
-RoStalker Source Code, since i don't care about the project anymore
+RoStalker Source Code, since i don't maintain the bot anymore. 
+A basic Discord bot to gain information on any ROBLOX account.
 
 ## Setup
 
