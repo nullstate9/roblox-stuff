@@ -45,7 +45,7 @@ main() {
 
         if [[ "$arch" == "arm64" ]]; then
             echo "[!] Apple Silicon CPU Detected"
-            version=$(curl -s "https://setup.rbxcdn.com/channel/zmacarm64/mac/arm64/version")
+            version=$(curl -s http://setup.roblox.com/mac/arm64/DeployHistory.txt | grep "New Client version" | tail -n 1 | sed -n 's/.*\(version-[^ ]*\).*/\1/p')
             curl -s "http://setup.rbxcdn.com/channel/zmacarm64/mac/arm64/{$version}-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
         elif [[ "$arch" == "x86_64" ]]; then
             echo "[!] Intel CPU Detected"
