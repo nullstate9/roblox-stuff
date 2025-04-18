@@ -30,34 +30,25 @@ main() {
             echo "[!] Roblox app not found!"
         fi
 
-        echo "[+] Installing jq (Helper Tool)"
         cd /tmp
-
-        curl -sL -o jq "https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-macos-amd64"
-        chmod +x ./jq
-
-
         echo "[+] Downloading Latest Roblox..."
 
         [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
 
         arch=$(uname -m)
-
+        
         if [[ "$arch" == "arm64" ]]; then
             echo "[!] Apple Silicon CPU Detected"
             version=$(curl -s http://setup.roblox.com/mac/arm64/DeployHistory.txt | grep "New Client version" | tail -n 1 | sed -n 's/.*\(version-[^ ]*\).*/\1/p')
-            curl -s "http://setup.rbxcdn.com/channel/zmacarm64/mac/arm64/{$version}-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
+            curl -s "http://setup.rbxcdn.com/mac/arm64/{$version}-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
         elif [[ "$arch" == "x86_64" ]]; then
             echo "[!] Intel CPU Detected"
-            version=$(curl -s "https://clientsettingscdn.roblox.com/v2/client-version/MacPlayer" | ./jq -r ".clientVersionUpload")        
+            version=$(curl -s http://setup.roblox.com/mac/DeployHistory.txt | grep "New Client version" | tail -n 1 | sed -n 's/.*\(version-[^ ]*\).*/\1/p')
             curl -s "http://setup.rbxcdn.com/mac/{$version}-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
         else
             echo "Unknown architecture: $arch. Aborting"
             exit 0
         fi
-        
-        echo "[-] Removing jq (Helper Tool)"
-        rm -rf ./jq
         
         echo "[+] Installing Latest Roblox..."
 
