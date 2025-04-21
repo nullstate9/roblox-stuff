@@ -22,13 +22,22 @@ main() {
         else
             echo "[!] Hydrogen Application not found!"
         fi
-
+        
+        if [ -d "~/Hydrogen" ]; then
+            echo "[-] Removing ~/Hydrogen..."
+            rm -rf "~/Hydrogen"
+        else
+            echo "[!] Hydrogen folder not found!"
+        fi
+        
         if [ -d "/Applications/Roblox.app" ]; then
             echo "[-] Removing /Applications/Roblox.app..."
             rm -rf "/Applications/Roblox.app"
         else
             echo "[!] Roblox app not found!"
         fi
+
+        
 
         cd /tmp
         echo "[+] Downloading Latest Roblox..."
