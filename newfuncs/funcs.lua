@@ -1,4 +1,4 @@
-crypt.hmac_encode = function(key, message)
+crypt.hmac_encode = function(string: key, string: message)
     -- Necessary Local Functions
     local function hex_decode(hex)
         local str = ""
@@ -58,7 +58,7 @@ crypt.hmac_encode = function(key, message)
     return final_bytes
 end
 
-crypt.jwt_encode = function(key, payload)
+crypt.jwt_encode = function(string: key, string: payload)
     local HttpService = game:GetService("HttpService") -- Required for JSONEncode()
 
     local function base64url_encode(data) -- Formatting base64 encoding to URL-safe base64
@@ -86,7 +86,7 @@ crypt.jwt_encode = function(key, payload)
     return token
 end
 
-crypt.jwt_decode = function(key, token)
+crypt.jwt_decode = function(string: key, string: token)
     local HttpService = game:GetService("HttpService")-- Required for JSONEncode() and JSONDecode()
 
     local function base64url_encode(data) -- Formatting base64 encoding to URL-safe base64
