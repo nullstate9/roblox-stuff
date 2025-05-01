@@ -3,6 +3,7 @@
 main() {
     clear
     echo "\033[1;33mWarning\033[0m: This is an \033[1;31munofficial\033[0m application created by @109dg."
+    echo "Please note that the Uninstall and Reinstall both automatically reinstall ROBLOX to the latest version."
     sleep 1
     echo "Install Hydrogen-M:         Press 1"
     echo "Uninstall Hydrogen-M:       Press 2"
