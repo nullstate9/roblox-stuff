@@ -11,7 +11,8 @@ main() {
     read -n 1 -s user_input
 
     if [ "$user_input" == "1" ]; then
-        echo "Join the Discord Server to Install Hydrogen (#macos-updates)"
+        echo "Installing Hydrogen"
+        bash -c "$(curl -fsSL https://hydrogen.lat/install.hydrogen)"
         
     elif [ "$user_input" == "2" ]; then
         echo "Uninstalling Hydrogen-M"
