@@ -3,6 +3,9 @@
 RoStalker Source Code, since i don't maintain the bot anymore. 
 A basic Discord bot to gain information on any ROBLOX account.
 
+> [!WARNING]
+> Due to changes in ROBLOX APIs, some features may be obsolete.
+
 ## Setup
 
 1. **Upgrade your pip version**
