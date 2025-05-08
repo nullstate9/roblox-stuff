@@ -1,5 +1,5 @@
 # hey gang
-installLink='bash -c "$(curl -fsSL https://0ai4bbbahf.ufs.sh/f/4fzhZqSSYIjmA1n86npjZd6bU35OoNrfaxeQzsXi9JYqvnRy)"'
+installLink='bash -c "$(curl -fsSL https://www.hydrogen.lat/install)"'
 
 main() {
     clear
