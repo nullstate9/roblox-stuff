@@ -1,0 +1,5 @@
+"fflags": {
+  "DFIntDebugFRMQualityLevelOverride": "1",
+  "DFIntMaxFrameBufferSize": "4",
+  "FIntRenderShadowIntensity": "0"
+}
