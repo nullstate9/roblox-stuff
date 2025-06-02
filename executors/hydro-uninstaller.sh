@@ -27,12 +27,6 @@ main() {
             echo "[!] Hydrogen Application not found!"
         fi
         
-        if [ -d "~/Hydrogen" ]; then
-            echo "[-] Removing ~/Hydrogen..."
-            rm -rf "~/Hydrogen"
-        else
-            echo "[!] Hydrogen folder not found!"
-        fi
         
         if [ -d "/Applications/Roblox.app" ]; then
             echo "[-] Removing /Applications/Roblox.app..."
@@ -40,8 +34,6 @@ main() {
         else
             echo "[!] Roblox app not found!"
         fi
-
-        
 
         cd /tmp
         echo "[+] Downloading Latest Roblox..."
@@ -84,13 +76,6 @@ main() {
             rm -rf "/Applications/Hydrogen-M.app"
         else
             echo "[!] Hydrogen Application not found!"
-        fi
-        
-        if [ -d "~/Hydrogen" ]; then
-            echo "[-] Removing ~/Hydrogen..."
-            rm -rf "~/Hydrogen"
-        else
-            echo "[!] Hydrogen folder not found!"
         fi
         
         if [ -d "/Applications/Roblox.app" ]; then
