@@ -90,35 +90,6 @@ main() {
             echo "[!] Roblox app not found!"
         fi
 
-        
-
-        cd /tmp
-
-        [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
-
-        arch=$(uname -m)
-        
-        if [[ "$arch" == "arm64" ]]; then
-            echo "[!] Apple Silicon CPU Detected"
-            echo "[+] Downloading Latest Roblox..."
-            version=$(curl -s http://setup.roblox.com/mac/arm64/DeployHistory.txt | grep "New Client version" | tail -n 1 | sed -n 's/.*\(version-[^ ]*\).*/\1/p')
-            curl -f --progress-bar "http://setup.rbxcdn.com/mac/arm64/{$version}-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
-        elif [[ "$arch" == "x86_64" ]]; then
-            echo "[!] Intel CPU Detected"
-            echo "[+] Downloading Latest Roblox..."
-            version=$(curl -s http://setup.roblox.com/mac/DeployHistory.txt | grep "New Client version" | tail -n 1 | sed -n 's/.*\(version-[^ ]*\).*/\1/p')
-            curl -f --progress-bar "http://setup.rbxcdn.com/mac/{$version}-RobloxPlayer.zip" -o "./RobloxPlayer.zip"
-        else
-            echo "Unknown architecture: $arch. Aborting"
-            exit 0
-        fi
-        
-        echo "[+] Installing Latest Roblox..."
-
-        unzip -qo "./RobloxPlayer.zip"
-        mv ./RobloxPlayer.app /Applications/Roblox.app
-        rm ./RobloxPlayer.zip
-
         sleep 1
         echo "[+] Reinstalling Hydrogen"
 
