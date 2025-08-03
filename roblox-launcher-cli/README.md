@@ -13,7 +13,7 @@ Required In-Built Libraries: `json`, `time`, `random`, `typing`
 `client.get_online_friends()` returns a list with dictionaries.
 
 Example Dictionary:
-```
+```json
 {
 "userPresence": {
   "UserPresenceType": "InGame",
