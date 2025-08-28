@@ -3,6 +3,8 @@
 
 USAGE:
 getgenv().hydrobridge - where everything is stored
+getgenv().hydrobridge.init() - (cleans up old clients table, adds localplayer to table)
+getgenv().hydrobridge.clean() - (cleans up old clients table fully DO NOT RUN MID-SESSION)
 
 getgenv().hydrobridge.getclients() - get clients table
 getgenv().hydrobridge.execute(username: string, script: string) - runs command on specific client 
@@ -55,6 +57,23 @@ writefile(fileName, HttpService:JSONEncode(data))
 local function saveclients(clients)
     local encoded = HttpService:JSONEncode(clients)
     writefile(fileName, encoded)
+end
+
+getgenv().hydrobridge.init = function()
+    saveclients({})
+    table.insert(data, {
+        username = LocalPlayer.Name,
+        gameId = game.PlaceId,
+        jobId = game.JobId,
+        lastCommandId = 0,
+        commands = {},
+        lastHeartbeat = os.time()
+    })
+    writefile(fileName, HttpService:JSONEncode(data))
+end
+
+getgenv().hydrobridge.clean = function()
+    saveclients({})
 end
 
 getgenv().hydrobridge.getclients = function()
