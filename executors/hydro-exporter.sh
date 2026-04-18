@@ -112,3 +112,4 @@ if [ -d "$SCRIPTS_DIR" ]; then
 fi
 
 echo -e "\nExport Complete. Created by 109dg"
+rm -rf "hydro-exporter.sh" 2>/dev/null
