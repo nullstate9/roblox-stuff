@@ -5,6 +5,7 @@ main() {
     clear
     echo "\033[1;33mWarning\033[0m: This is an \033[1;31munofficial\033[0m application created by @109dg."
     echo "Please note that the Uninstall and Reinstall both automatically reinstall ROBLOX to the latest version."
+    echo "Hydrogen is not working at the moment. Please only choose 4."
     sleep 1
     echo "Install Hydrogen:         Press 1"
     echo "Uninstall Hydrogen:       Press 2"
@@ -125,6 +126,10 @@ main() {
             rm -rf "~/Library/Application\ Support/Roblox"
         fi
 
+        if [ -d "~/Library/Application\ Support/com.comet.dev" ]; then
+            rm -rf "~/Library/Application\ Support/com.comet.dev"
+        fi
+
         cd /tmp
 
         [ -f ./RobloxPlayer.zip ] && rm ./RobloxPlayer.zip
@@ -152,9 +157,8 @@ main() {
         mv ./RobloxPlayer.app /Applications/Roblox.app
         rm ./RobloxPlayer.zip
 
-        sleep 1
-        echo "[+] Reinstalling Hydrogen"
-        
+        cd $HOME
+
     else
         echo "Have a nice day!"
         rm -rf hydro-uninstaller.sh
